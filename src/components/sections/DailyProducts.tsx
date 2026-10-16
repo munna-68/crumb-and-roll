@@ -103,7 +103,7 @@ function ProductShowcase({ products }: { products: Product[] }) {
         type="button"
         onClick={() => step(-1)}
         aria-label="Previous bakery products"
-        className="absolute top-[42%] -left-3 z-20 hidden h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-espresso/10 bg-white text-espresso shadow-lg transition-colors hover:bg-lemon md:flex lg:-left-5"
+        className="absolute top-[42%] -left-3 z-20 hidden h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-espresso/10 bg-white text-espresso shadow-lg transition-colors hover:bg-lemon lg:flex lg:-left-5"
       >
         <ChevronLeft className="h-5 w-5 stroke-[2.5]" aria-hidden="true" />
       </button>
@@ -111,7 +111,7 @@ function ProductShowcase({ products }: { products: Product[] }) {
         type="button"
         onClick={() => step(1)}
         aria-label="Next bakery products"
-        className="absolute top-[42%] -right-3 z-20 hidden h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-espresso/10 bg-white text-espresso shadow-lg transition-colors hover:bg-lemon md:flex lg:-right-5"
+        className="absolute top-[42%] -right-3 z-20 hidden h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-espresso/10 bg-white text-espresso shadow-lg transition-colors hover:bg-lemon lg:flex lg:-right-5"
       >
         <ChevronRight className="h-5 w-5 stroke-[2.5]" aria-hidden="true" />
       </button>
@@ -126,7 +126,7 @@ function ProductShowcase({ products }: { products: Product[] }) {
           animate="center"
           exit="exit"
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="hidden grid-cols-3 gap-7 pt-6 md:grid"
+          className="hidden grid-cols-3 gap-7 pt-6 lg:grid"
         >
           {visible.map((product, index) => (
             <ProductCard key={`${product.id}-${index}`} product={product} index={index} />
@@ -135,7 +135,7 @@ function ProductShowcase({ products }: { products: Product[] }) {
       </AnimatePresence>
 
       {/* Mobile: native snap scroller with every filtered product */}
-      <div className="no-scrollbar -mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pt-6 pb-4 md:hidden">
+      <div className="no-scrollbar -mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pt-6 pb-4 lg:hidden">
         {products.map((product, index) => (
           <div key={product.id} className="w-[78%] shrink-0 snap-center">
             <ProductCard product={product} index={index} />

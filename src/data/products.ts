@@ -22,8 +22,8 @@ export const DAILY_PRODUCTS: readonly Product[] = [
     price: 14,
     cardBg: 'bg-peach',
     subtitle: 'Toasted sesame & poppy seed NYC-style rings',
-    photoId: '1585478259715-876acc5be8eb',
-    imageAlt: 'Freshly baked seed-covered bagels stacked on a board',
+    photoId: '1633171702522-5806cb457df1',
+    imageAlt: 'Pile of freshly baked sesame seed bagels in golden sunlight',
     badge: 'FRESH',
   },
   {
