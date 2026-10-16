@@ -32,7 +32,7 @@ export function ProductCard({ product, index }: ProductCardProps) {
             image: unsplash(product.photoId, 400, 80),
           })
         }
-        aria-label={`Add ${product.title} to your bag for $${product.price}`}
+        aria-label={`${product.title}: ${product.subtitle} +$${product.price}. Add ${product.title} to your bag.`}
         className={`relative flex min-h-[250px] w-full cursor-pointer flex-col justify-end overflow-visible rounded-[34px] p-5 pt-0 shadow-sm ${product.cardBg}`}
       >
         {doodleVariant === 0 && (
@@ -65,13 +65,13 @@ export function ProductCard({ product, index }: ProductCardProps) {
             height={520}
             loading="lazy"
             decoding="async"
-            alt={product.imageAlt}
+            alt=""
             className="h-52 w-60 rounded-[26px] border-4 border-white/85 object-cover shadow-lg transition-transform duration-300 group-hover:scale-105"
           />
         </span>
 
         <span className="mt-3 flex items-center justify-between gap-3 px-1 text-xs font-extrabold text-espresso/90">
-          <span className="truncate">{product.subtitle}</span>
+          <span className="truncate">{product.subtitle}</span>{' '}
           <span className="shrink-0 rounded-full bg-white/90 px-2.5 py-1 shadow-sm">
             +${product.price}
           </span>

@@ -84,7 +84,7 @@ export function HeroBakeCookies() {
               <m.span variants={item} className="relative inline-block">
                 COOKIES
                 <span className="absolute top-1/2 right-2 hidden -translate-y-1/2 sm:right-5 sm:block">
-                  <StickerBadge className="bg-tangerine px-4 py-0.5 text-base lg:text-lg">
+                  <StickerBadge className="bg-tangerine px-4 py-0.5 text-base text-espresso! lg:text-lg">
                     CRUNCHY
                   </StickerBadge>
                 </span>
@@ -105,7 +105,7 @@ export function HeroBakeCookies() {
                 <br />
                 FROM SCRATCH{' '}
                 <span className="mx-1 inline-block -translate-y-0.5 align-middle">
-                  <StickerBadge rotate={3} className="bg-sky px-3.5 py-1 text-xs sm:text-sm">
+                  <StickerBadge rotate={3} className="bg-sky px-3.5 py-1 text-xs text-espresso! sm:text-sm">
                     • FRESH
                   </StickerBadge>
                 </span>
@@ -166,7 +166,7 @@ export function HeroBakeCookies() {
                   <StickerBadge className="bg-forest px-3.5 py-1.5 text-xs">TASTY</StickerBadge>
                 </span>
                 <span className="absolute top-1 right-2 z-20 sm:hidden">
-                  <StickerBadge rotate={3} className="bg-sky px-3.5 py-1.5 text-xs">
+                  <StickerBadge rotate={3} className="bg-sky px-3.5 py-1.5 text-xs text-espresso!">
                     • FRESH
                   </StickerBadge>
                 </span>
@@ -198,7 +198,7 @@ export function HeroBakeCookies() {
 
                 {/* mobile CRUNCHY sticker */}
                 <span className="absolute -bottom-3 right-6 z-20 sm:hidden">
-                  <StickerBadge className="bg-tangerine px-4 py-1.5 text-xs">CRUNCHY</StickerBadge>
+                  <StickerBadge className="bg-tangerine px-4 py-1.5 text-xs text-espresso!">CRUNCHY</StickerBadge>
                 </span>
 
                 {/* wooden cutting-board strip (desktop) */}

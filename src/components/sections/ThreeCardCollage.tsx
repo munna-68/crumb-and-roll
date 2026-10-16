@@ -116,7 +116,7 @@ export function ThreeCardCollage({ showQuote = true }: ThreeCardCollageProps) {
         <Reveal delay={0.14} className="w-full">
           <div className="group relative flex min-h-[285px] w-full flex-col justify-between overflow-visible rounded-[38px] bg-cocoa p-6 text-white shadow-md sm:p-7">
             <span className="absolute -top-4 left-1/2 z-20 -translate-x-1/2">
-              <StickerBadge className="bg-tangerine px-5 py-1.5 text-sm sm:text-base">
+              <StickerBadge className="bg-tangerine px-5 py-1.5 text-sm text-espresso! sm:text-base">
                 CRUNCHY
               </StickerBadge>
             </span>

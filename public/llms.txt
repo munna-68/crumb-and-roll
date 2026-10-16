@@ -1,0 +1,15 @@
+# ROLLIN.
+
+> Artisanal bakery: premium bread, cookies, croissants, bretzels and pastries,
+> baked by hand every morning on stone hearths.
+
+## Pages
+
+- [Home](/): single-page storefront with the "Bake the cookies" hero, a
+  featured bake, the daily product carousel with category filters, the
+  art-of-baking story, reviews, and a 15% off subscribe offer.
+
+## Notes
+
+- Prices are illustrative demo data.
+- Promo: 15% off orders of $100+ (code ROLLIN15).

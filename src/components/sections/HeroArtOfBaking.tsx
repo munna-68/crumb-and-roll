@@ -29,7 +29,7 @@ export function HeroArtOfBaking() {
             <span className="relative mr-3 inline-block sm:mr-5">
               THE
               <span className="absolute top-1/2 right-[-14px] -translate-y-1/2 sm:right-[-18px]">
-                <StickerBadge rotate={4} className="bg-sky px-2.5 py-0.5 text-[10px] sm:px-4 sm:py-1 sm:text-base lg:text-lg">
+                <StickerBadge rotate={4} className="bg-sky px-2.5 py-0.5 text-[10px] text-espresso! sm:px-4 sm:py-1 sm:text-base lg:text-lg">
                   • FRESH
                 </StickerBadge>
               </span>
