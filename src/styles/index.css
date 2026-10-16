@@ -1,0 +1,114 @@
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------------------
+   ROLLIN. design tokens — ported 1:1 from the reference design file.
+   --------------------------------------------------------------------------- */
+@theme {
+  /* Typography */
+  --font-display: 'Lilita One', 'Plus Jakarta Sans Variable', cursive, sans-serif;
+  --font-display--letter-spacing: 0.02em;
+  --font-sans: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', ui-sans-serif,
+    system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Core palette */
+  --color-espresso: #331b15;
+  --color-espresso-deep: #311e1a;
+  --color-cocoa: #7a441e;
+  --color-cocoa-line: #5a3e36;
+  --color-cream: #faf6f1;
+  --color-linen: #f5efe8;
+
+  /* Accents */
+  --color-tangerine: #ff6b2b;
+  --color-tangerine-bright: #ff7a2f;
+  --color-amber-promo: #ff8a00;
+  --color-lemon: #f7e31b;
+  --color-lemon-soft: #fde624;
+  --color-lemon-pale: #e8f086;
+  --color-grape: #5d19b8;
+  --color-sky: #129ceb;
+  --color-forest: #1f7a4c;
+  --color-forest-soft: #2d7a53;
+
+  /* Section surfaces */
+  --color-sky-card: #9ad9ea;
+  --color-sky-slice: #99d9ea;
+  --color-teal-card: #9dcad4;
+  --color-teal-banner: #9dc9d1;
+  --color-lavender: #dcd0ff;
+  --color-blush: #d7c4be;
+  --color-salmon: #ffcbb5;
+  --color-peach: #ffa977;
+  --color-mist: #e3e7e8;
+  --color-sand: #f5d6b4;
+
+  /* Deep text tints used by the category pills */
+  --color-deep-teal: #0b4f5e;
+  --color-indigo-deep: #2d1963;
+  --color-slate-deep: #243238;
+  --color-rust-deep: #521d08;
+
+  /* Motion */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-spin-slow: spin 18s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+   --------------------------------------------------------------------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* keep anchored sections clear of the sticky header */
+    scroll-padding-top: 6.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-cream font-sans text-espresso antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-lemon);
+    color: var(--color-espresso);
+  }
+
+  :focus-visible {
+    outline: 2.5px solid var(--color-tangerine);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Firefox scrollbar polish for inner scroll areas */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--color-espresso) 25%, transparent)
+      transparent;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Utilities
+   --------------------------------------------------------------------------- */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
