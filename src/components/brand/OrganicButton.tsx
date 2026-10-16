@@ -10,7 +10,11 @@ const SIZE_CLASSES = {
 
 type Size = keyof typeof SIZE_CLASSES;
 
-interface OrganicButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface OrganicButtonProps
+  extends Omit<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    'onDrag' | 'onDragStart' | 'onDragEnd' | 'onAnimationStart' | 'onAnimationEnd' | 'onTransitionEnd'
+  > {
   children: ReactNode;
   /** small white dot before the label (reference CTA treatment) */
   showDot?: boolean;
