@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, m, useReducedMotion } from 'framer-motion';
 import { OrganicButton } from '../brand/OrganicButton';
-import { BotanicalWheat, OrangeRays } from '../brand/Doodles';
+import { OrangeRays } from '../brand/Doodles';
 import { Parallax } from '../motion/Parallax';
 import { Reveal } from '../motion/Reveal';
 import { useUI } from '../../context/ui';
@@ -68,8 +68,20 @@ export function ArtFormBanner() {
           onFocus={() => setPaused(true)}
           onBlur={() => setPaused(false)}
         >
-          <Parallax className="pointer-events-none absolute right-0 bottom-0 opacity-90" strength={20}>
-            <BotanicalWheat className="h-80 w-64" />
+          <Parallax
+            className="pointer-events-none absolute -right-6 -bottom-6 opacity-75 sm:opacity-90"
+            strength={20}
+          >
+            <img
+              src="/images/wheat-stalks-line-art.png"
+              alt=""
+              aria-hidden="true"
+              width={1400}
+              height={992}
+              loading="lazy"
+              decoding="async"
+              className="h-[240px] w-auto max-w-none select-none sm:h-[320px] lg:h-[380px]"
+            />
           </Parallax>
 
           <div className="relative z-10 grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
