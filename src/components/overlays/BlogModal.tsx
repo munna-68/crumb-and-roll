@@ -2,7 +2,7 @@ import { X } from 'lucide-react';
 import { Modal } from '../ui/Modal';
 import { OrganicButton } from '../brand/OrganicButton';
 import { useUI } from '../../context/ui';
-import { unsplash } from '../../lib/images';
+import { bake, bakeSrcSet } from '../../lib/images';
 
 /** "ROLLIN. baking journal" teaser modal (opened by the blog CTAs). */
 export function BlogModal() {
@@ -35,12 +35,14 @@ export function BlogModal() {
         HOW WE REFRESHED OUR 200-YEAR-OLD SOURDOUGH STARTER
       </h2>
       <img
-        src={unsplash('1509440159596-0249088772ff', 900, 80)}
-        width={900}
-        height={600}
+        src={bake('hero-bread-stack', 1200)}
+        srcSet={bakeSrcSet('hero-bread-stack', [800, 1200])}
+        sizes="(min-width: 640px) 560px, 100vw"
+        width={1200}
+        height={1200}
         loading="lazy"
         decoding="async"
-        alt="Artisan loaves cooling after baking"
+        alt="Stack of rustic multigrain loaves on a wooden board"
         className="my-4 h-48 w-full rounded-2xl object-cover shadow-md"
       />
       <p className="text-xs leading-relaxed font-semibold text-espresso/85 sm:text-sm">

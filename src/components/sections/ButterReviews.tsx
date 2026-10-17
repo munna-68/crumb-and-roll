@@ -6,7 +6,7 @@ import { Reveal } from '../motion/Reveal';
 import { useUI } from '../../context/ui';
 import { useToast } from '../../context/toast';
 import { RATING, REVIEW_TAGS, type ReviewTag } from '../../data/reviews';
-import { unsplash } from '../../lib/images';
+import { bake } from '../../lib/images';
 
 /** Light-teal "with enough butter" banner with the rating + review tag pills. */
 export function ButterReviews() {
@@ -21,9 +21,9 @@ export function ButterReviews() {
         className="relative overflow-hidden rounded-[36px] bg-teal-banner p-7 shadow-sm sm:p-10 lg:p-12"
       >
         <img
-          src={unsplash('1499636136210-6f4ee915583e', 300, 80)}
-          width={300}
-          height={300}
+          src={bake('cookie-round', 400)}
+          width={400}
+          height={400}
           loading="lazy"
           decoding="async"
           alt=""

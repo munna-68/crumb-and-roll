@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useReducer } from 'react';
 import type { ReactNode } from 'react';
-import { unsplash } from '../lib/images';
+import { bake } from '../lib/images';
 import { PROMO } from '../config/site';
 import { CartContext, type AddToCartInput, type CartApi, type CartItem } from './cart';
 import { useToast } from './toast';
@@ -22,14 +22,14 @@ function createSeedCart(): CartItem[] {
       name: 'Real Wheat Baked Cookies (Pack)',
       price: 16,
       qty: 1,
-      image: unsplash('1499636136210-6f4ee915583e', 300, 80),
+      image: bake('cookie-round', 400),
     },
     {
       id: 'bagel-buns',
       name: 'Bagel Buns (Gluten Free)',
       price: 16,
       qty: 1,
-      image: unsplash('1555507036-ab1f4038808a', 300, 80),
+      image: bake('bagel-buns', 400),
     },
   ];
 }

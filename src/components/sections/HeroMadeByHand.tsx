@@ -3,7 +3,7 @@ import { OrangeRays, BotanicalWheat } from '../brand/Doodles';
 import { Parallax } from '../motion/Parallax';
 import { Reveal } from '../motion/Reveal';
 import { useCart } from '../../context/cart';
-import { unsplash } from '../../lib/images';
+import { bake, bakeSrcSet } from '../../lib/images';
 
 /**
  * Alternate hero (reference Hero 2) — "MADE BY HAND, FROM SCRATCH, WITH LOVE."
@@ -33,12 +33,12 @@ export function HeroMadeByHand() {
                   <OrangeRays className="h-11 w-11" />
                 </span>
                 <img
-                  src={unsplash('1556910103-1c02745aae4d', 900, 85)}
-                  srcSet={`${unsplash('1556910103-1c02745aae4d', 600, 85)} 600w, ${unsplash('1556910103-1c02745aae4d', 900, 85)} 900w`}
+                  src={bake('baker-hands', 1000)}
+                  srcSet={bakeSrcSet('baker-hands', [600, 1000])}
                   sizes="(min-width: 1024px) 560px, 100vw"
-                  width={900}
-                  height={600}
-                  alt="Artisan baker kneading dough by hand"
+                  width={1000}
+                  height={1340}
+                  alt="Artisan baker rolling dough on a flour-dusted counter"
                   className="h-[260px] w-full rounded-[32px] object-cover shadow-lg sm:h-[310px]"
                 />
               </div>
@@ -67,7 +67,7 @@ export function HeroMadeByHand() {
                       id: 'scratch-loaf',
                       name: 'Handmade Scratch Sourdough Loaf',
                       price: 18,
-                      image: unsplash('1509440159596-0249088772ff', 400),
+                      image: bake('hero-bread-stack', 480),
                     })
                   }
                 >

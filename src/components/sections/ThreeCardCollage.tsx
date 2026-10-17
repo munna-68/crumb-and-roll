@@ -139,7 +139,7 @@ export function ThreeCardCollage({ showQuote = true }: ThreeCardCollageProps) {
                       id: 'wheat-baked',
                       name: 'Real Wheat Baked Cookies (Pack)',
                       price: 16,
-                      image: unsplash('1499636136210-6f4ee915583e', 400, 80),
+                      image: bake('cookie-round', 400),
                     })
                   }
                   className="cursor-pointer rounded-full bg-white/15 px-3 py-1 text-xs font-extrabold uppercase transition-colors hover:bg-lemon hover:text-espresso"
@@ -156,12 +156,12 @@ export function ThreeCardCollage({ showQuote = true }: ThreeCardCollageProps) {
             <div className="relative z-10 -mr-2 -mb-2 self-end">
               <div className="h-28 w-36 overflow-hidden rounded-2xl border-2 border-[#9C5C30] shadow-lg transition-transform duration-300 group-hover:scale-105">
                 <img
-                  src={unsplash('1499636136210-6f4ee915583e', 500, 85)}
-                  width={500}
-                  height={375}
+                  src={bake('cookie-round', 400)}
+                  width={400}
+                  height={400}
                   loading="lazy"
                   decoding="async"
-                  alt="Twine-tied wheat cookies"
+                  alt="Chocolate chunk cookies with flaky sea salt"
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -197,7 +197,7 @@ export function ThreeCardCollage({ showQuote = true }: ThreeCardCollageProps) {
                   id: 'chef-combo',
                   name: 'Master Baker Artisan Bread Combo Bag',
                   price: 24,
-                  image: unsplash('1549931319-a545dcf3bc73', 500, 80),
+                  image: bake('baguette-bag', 400),
                 })
               }
               className={`absolute top-6 right-5 z-20 cursor-pointer rounded-full px-4 py-1.5 font-display text-xs tracking-wider text-white uppercase shadow-md sm:text-sm ${
@@ -210,22 +210,22 @@ export function ThreeCardCollage({ showQuote = true }: ThreeCardCollageProps) {
             <div className="relative z-10 -mt-20 flex items-end justify-center">
               <div className="relative flex h-64 w-64 items-end justify-center">
                 <img
-                  src={unsplash('1577219491135-ce391730fb2c', 700, 85)}
-                  width={700}
-                  height={875}
+                  src={bake('master-baker', 600)}
+                  width={600}
+                  height={804}
                   loading="lazy"
                   decoding="async"
-                  alt="Happy master baker holding fresh bread"
+                  alt="Smiling master baker holding a fresh loaf toward the camera"
                   className="h-64 w-52 rounded-t-[36px] border-x-4 border-t-4 border-white/70 object-cover object-top shadow-lg"
                 />
                 <div className="absolute right-1 -bottom-1 h-32 w-32 rotate-6 overflow-hidden rounded-2xl border-4 border-lemon-soft shadow-xl transition-transform duration-300 group-hover:rotate-3">
                   <img
-                    src={unsplash('1549931319-a545dcf3bc73', 500, 85)}
-                    width={500}
-                    height={500}
+                    src={bake('baguette-bag', 400)}
+                    width={400}
+                    height={400}
                     loading="lazy"
                     decoding="async"
-                    alt="Paper bag of baguettes"
+                    alt="Kraft paper bag with crusty baguettes"
                     className="h-full w-full object-cover"
                   />
                 </div>

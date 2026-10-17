@@ -6,7 +6,7 @@ import { Parallax } from '../motion/Parallax';
 import { Reveal } from '../motion/Reveal';
 import { useUI } from '../../context/ui';
 import { SECTION_IDS } from '../../config/site';
-import { unsplash } from '../../lib/images';
+import { bake, bakeSrcSet } from '../../lib/images';
 
 const SLIDES = [
   {
@@ -109,11 +109,11 @@ export function ArtFormBanner() {
                   <OrangeRays className="h-11 w-11" />
                 </span>
                 <img
-                  src={unsplash('1556910103-1c02745aae4d', 900, 85)}
-                  srcSet={`${unsplash('1556910103-1c02745aae4d', 600, 85)} 600w, ${unsplash('1556910103-1c02745aae4d', 900, 85)} 900w`}
+                  src={bake('baker-hands', 1000)}
+                  srcSet={bakeSrcSet('baker-hands', [600, 1000])}
                   sizes="(min-width: 1024px) 560px, 100vw"
-                  width={900}
-                  height={600}
+                  width={1000}
+                  height={1340}
                   loading="lazy"
                   decoding="async"
                   alt={slide.alt}
