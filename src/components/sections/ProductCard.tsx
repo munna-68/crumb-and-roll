@@ -1,21 +1,17 @@
 import { m, useReducedMotion } from 'framer-motion';
-import { SketchedCookie } from '../brand/Doodles';
+import { ProductStamp } from '../brand/ProductStamps';
 import { useCart } from '../../context/cart';
 import { bake, bakeSrcSet } from '../../lib/images';
 import type { Product } from '../../data/products';
 
 interface ProductCardProps {
   product: Product;
-  /** display position — drives the doodle variant like the reference */
-  index: number;
 }
 
 /** Colored card with a pop-out product photo; the whole card is an add-to-bag button. */
-export function ProductCard({ product, index }: ProductCardProps) {
+export function ProductCard({ product }: ProductCardProps) {
   const { addItem } = useCart();
   const reduce = useReducedMotion();
-
-  const doodleVariant = index % 3;
 
   return (
     <div className="group flex h-full flex-col items-center">
@@ -35,26 +31,13 @@ export function ProductCard({ product, index }: ProductCardProps) {
         aria-label={`${product.title}: ${product.subtitle} +$${product.price}. Add ${product.title} to your bag.`}
         className={`relative flex min-h-[250px] w-full cursor-pointer flex-col justify-end overflow-visible rounded-[34px] p-5 pt-0 shadow-sm ${product.cardBg}`}
       >
-        {doodleVariant === 0 && (
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute top-4 right-4 flex w-12 flex-wrap gap-1.5 opacity-60"
-          >
-            {Array.from({ length: 8 }, (_, chip) => (
-              <span key={chip} className="h-0.5 w-1.5 rotate-45 rounded-full bg-espresso" />
-            ))}
-          </span>
-        )}
-        {doodleVariant === 1 && (
-          <span className="pointer-events-none absolute top-2 right-2 opacity-75">
-            <SketchedCookie className="h-16 w-16" strokeColor="#0B4F5E" />
-          </span>
-        )}
-        {doodleVariant === 2 && (
-          <span className="pointer-events-none absolute top-2 right-2 opacity-75">
-            <SketchedCookie className="h-16 w-16" />
-          </span>
-        )}
+        <span className="pointer-events-none absolute top-3 right-3 opacity-80">
+          <ProductStamp
+            stamp={product.stamp}
+            color={product.stampColor}
+            className="h-14 w-14"
+          />
+        </span>
 
         <span className="relative z-10 -mt-10 flex justify-center">
           <img

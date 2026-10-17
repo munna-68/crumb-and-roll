@@ -121,9 +121,9 @@ function ProductShowcase({ products }: { products: Product[] }) {
           animate={{ x: `${(-carouselIndex * 100) / 3}%` }}
           transition={reduce ? { duration: 0 } : { duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
         >
-          {products.map((product, index) => (
+          {products.map((product) => (
             <div key={product.id} className="w-1/3 shrink-0 px-3.5">
-              <ProductCard product={product} index={index} />
+              <ProductCard product={product} />
             </div>
           ))}
         </m.div>
@@ -131,9 +131,9 @@ function ProductShowcase({ products }: { products: Product[] }) {
 
       {/* Mobile: native snap scroller with every filtered product */}
       <div className="no-scrollbar -mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pt-6 pb-4 lg:hidden">
-        {products.map((product, index) => (
+        {products.map((product) => (
           <div key={product.id} className="w-[78%] shrink-0 snap-center">
-            <ProductCard product={product} index={index} />
+            <ProductCard product={product} />
           </div>
         ))}
       </div>

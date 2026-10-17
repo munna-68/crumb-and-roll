@@ -1,5 +1,13 @@
 import type { CategoryId } from './categories';
 
+export type ProductStampId =
+  | 'cookies'
+  | 'cake'
+  | 'bretzel'
+  | 'croissant'
+  | 'bagel'
+  | 'sourdough';
+
 export interface Product {
   id: string;
   title: string;
@@ -12,6 +20,10 @@ export interface Product {
   image: string;
   imageAlt: string;
   badge: string;
+  /** monoline stamp drawn in the card corner */
+  stamp: ProductStampId;
+  /** stamp stroke colour, tuned to the card surface */
+  stampColor: string;
 }
 
 export const DAILY_PRODUCTS: readonly Product[] = [
@@ -25,6 +37,8 @@ export const DAILY_PRODUCTS: readonly Product[] = [
     image: 'bagel-with-seeds',
     imageAlt: 'Pile of freshly baked sesame and poppy seed bagels in golden light',
     badge: 'FRESH',
+    stamp: 'bagel',
+    stampColor: '#521D08',
   },
   {
     id: 'sliced-bread',
@@ -36,6 +50,8 @@ export const DAILY_PRODUCTS: readonly Product[] = [
     image: 'sliced-piece-bread',
     imageAlt: '72-hour fermented walnut sourdough boule with a sliced half',
     badge: 'ARTISAN',
+    stamp: 'sourdough',
+    stampColor: '#0B4F5E',
   },
   {
     id: 'cookies-glucose',
@@ -47,6 +63,8 @@ export const DAILY_PRODUCTS: readonly Product[] = [
     image: 'cookies-glucose',
     imageAlt: 'Belgian dark chocolate chunk cookies with a molten chocolate pull',
     badge: 'CRUNCHY',
+    stamp: 'cookies',
+    stampColor: '#331B15',
   },
   {
     id: 'butter-croissant',
@@ -58,6 +76,8 @@ export const DAILY_PRODUCTS: readonly Product[] = [
     image: 'croissant',
     imageAlt: 'Golden flaky butter croissants, one torn to show the honeycomb crumb',
     badge: 'TASTY',
+    stamp: 'croissant',
+    stampColor: '#331B15',
   },
   {
     id: 'bavarian-bretzel',
@@ -69,6 +89,8 @@ export const DAILY_PRODUCTS: readonly Product[] = [
     image: 'bretzel',
     imageAlt: 'Bavarian pretzels with glossy dark crust and coarse sea salt',
     badge: 'WARM',
+    stamp: 'bretzel',
+    stampColor: '#2D1963',
   },
   {
     id: 'velvet-cake',
@@ -80,5 +102,7 @@ export const DAILY_PRODUCTS: readonly Product[] = [
     image: 'butter-cake',
     imageAlt: 'Plain butter cake loaf with a thick slice cut to show the golden crumb',
     badge: 'SWEET',
+    stamp: 'cake',
+    stampColor: '#0B4F5E',
   },
 ] as const;
