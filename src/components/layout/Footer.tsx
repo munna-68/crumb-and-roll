@@ -36,7 +36,15 @@ export function Footer() {
       <div className="mx-auto max-w-[1220px]">
         <div className="flex flex-col items-center justify-between gap-4 rounded-2xl bg-espresso-deep px-6 py-5 text-white sm:flex-row">
           <p className="text-xs font-medium text-white/75">
-            Designed by <span className="font-bold text-white">@ui-collective</span>
+            Developed by{' '}
+            <a
+              href="https://sitekeep.studio"
+              target="_blank"
+              rel="noreferrer"
+              className="font-bold text-white hover:underline"
+            >
+              sitekeep.studio
+            </a>
           </p>
 
           <a

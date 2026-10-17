@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { AnimatePresence, m } from 'framer-motion';
+import { m, useReducedMotion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { BittenCookieBadge } from '../brand/Doodles';
 import { ProductCard } from './ProductCard';
@@ -74,65 +74,60 @@ const MOBILE_ROWS: { ids: CategoryId[] }[] = [
   { ids: ['CROISSANT'] },
 ];
 
-const slideVariants = {
-  enter: (direction: number) => ({ opacity: 0, x: 36 * direction }),
-  center: { opacity: 1, x: 0 },
-  exit: (direction: number) => ({ opacity: 0, x: -36 * direction }),
-};
-
 /**
  * Carousel + mobile snap scroller. Mounted with `key={activeCategory}` so a
- * filter change resets the carousel and the scroller position by remounting.
+ * filter change resets the track position by remounting.
  */
 function ProductShowcase({ products }: { products: Product[] }) {
   const [carouselIndex, setCarouselIndex] = useState(0);
-  const [direction, setDirection] = useState(1);
+  const reduce = useReducedMotion();
 
-  const visible = [0, 1, 2].map(
-    (offset) => products[(carouselIndex + offset) % products.length],
-  );
+  const maxIndex = Math.max(0, products.length - 3);
+  const canStep = products.length > 3;
 
   const step = (delta: 1 | -1) => {
-    setDirection(delta);
-    setCarouselIndex((prev) => (prev + delta + products.length) % products.length);
+    setCarouselIndex((prev) => Math.min(maxIndex, Math.max(0, prev + delta)));
   };
 
   return (
     <div className="relative mt-12">
-      <button
-        type="button"
-        onClick={() => step(-1)}
-        aria-label="Previous bakery products"
-        className="absolute top-[42%] -left-3 z-20 hidden h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-espresso/10 bg-white text-espresso shadow-lg transition-colors hover:bg-lemon lg:flex lg:-left-5"
-      >
-        <ChevronLeft className="h-5 w-5 stroke-[2.5]" aria-hidden="true" />
-      </button>
-      <button
-        type="button"
-        onClick={() => step(1)}
-        aria-label="Next bakery products"
-        className="absolute top-[42%] -right-3 z-20 hidden h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-espresso/10 bg-white text-espresso shadow-lg transition-colors hover:bg-lemon lg:flex lg:-right-5"
-      >
-        <ChevronRight className="h-5 w-5 stroke-[2.5]" aria-hidden="true" />
-      </button>
-
-      {/* Desktop / tablet: rotating 3-card grid */}
-      <AnimatePresence mode="wait" initial={false} custom={direction}>
-        <m.div
-          key={carouselIndex}
-          custom={direction}
-          variants={slideVariants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="hidden grid-cols-3 gap-7 pt-6 lg:grid"
+      {canStep && (
+        <button
+          type="button"
+          onClick={() => step(-1)}
+          disabled={carouselIndex === 0}
+          aria-label="Previous bakery products"
+          className="absolute top-[42%] -left-3 z-20 hidden h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-espresso/10 bg-white text-espresso shadow-lg transition-[background-color,opacity] hover:bg-lemon disabled:pointer-events-none disabled:opacity-40 lg:flex lg:-left-5"
         >
-          {visible.map((product, index) => (
-            <ProductCard key={`${product.id}-${index}`} product={product} index={index} />
+          <ChevronLeft className="h-5 w-5 stroke-[2.5]" aria-hidden="true" />
+        </button>
+      )}
+      {canStep && (
+        <button
+          type="button"
+          onClick={() => step(1)}
+          disabled={carouselIndex >= maxIndex}
+          aria-label="Next bakery products"
+          className="absolute top-[42%] -right-3 z-20 hidden h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-espresso/10 bg-white text-espresso shadow-lg transition-[background-color,opacity] hover:bg-lemon disabled:pointer-events-none disabled:opacity-40 lg:flex lg:-right-5"
+        >
+          <ChevronRight className="h-5 w-5 stroke-[2.5]" aria-hidden="true" />
+        </button>
+      )}
+
+      {/* Desktop / tablet: one sliding track — cards glide, nothing remounts */}
+      <div className="-mt-6 hidden overflow-hidden pt-12 pb-3 lg:block">
+        <m.div
+          className="flex"
+          animate={{ x: `${(-carouselIndex * 100) / 3}%` }}
+          transition={reduce ? { duration: 0 } : { duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {products.map((product, index) => (
+            <div key={product.id} className="w-1/3 shrink-0 px-3.5">
+              <ProductCard product={product} index={index} />
+            </div>
           ))}
         </m.div>
-      </AnimatePresence>
+      </div>
 
       {/* Mobile: native snap scroller with every filtered product */}
       <div className="no-scrollbar -mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pt-6 pb-4 lg:hidden">
