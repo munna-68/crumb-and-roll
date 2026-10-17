@@ -6,7 +6,7 @@ import { Parallax } from '../motion/Parallax';
 import { Reveal } from '../motion/Reveal';
 import { useUI } from '../../context/ui';
 import { SECTION_IDS } from '../../config/site';
-import { bake, bakeSrcSet } from '../../lib/images';
+import { bake, bakeSrcSet, publicAsset } from '../../lib/images';
 
 const SLIDES = [
   {
@@ -73,7 +73,7 @@ export function ArtFormBanner() {
             strength={20}
           >
             <img
-              src="/images/wheat-stalks-line-art.png"
+              src={publicAsset('/images/wheat-stalks-line-art.png')}
               alt=""
               aria-hidden="true"
               width={1400}

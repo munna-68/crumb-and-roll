@@ -6,7 +6,12 @@
  * `<name>-<width>.webp` where width is the exact pixel width of the file.
  */
 
-const BASE = '/images/bakes';
+const BASE = `${import.meta.env.BASE_URL}images/bakes`;
+
+/** Resolve a root-relative public asset (e.g. "/images/x.png") under the app's base path. */
+export function publicAsset(path: string): string {
+  return `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+}
 
 export function bake(name: string, width: number): string {
   return `${BASE}/${name}-${width}.webp`;
