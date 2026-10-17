@@ -69,7 +69,7 @@ export function ArtFormBanner() {
           onBlur={() => setPaused(false)}
         >
           <Parallax
-            className="pointer-events-none absolute -right-6 -bottom-6 opacity-75 sm:opacity-90"
+            className="pointer-events-none absolute right-0 bottom-0 opacity-60"
             strength={20}
           >
             <img

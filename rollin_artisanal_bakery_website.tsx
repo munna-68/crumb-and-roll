@@ -1628,7 +1628,7 @@ export default function App() {
               <section id="art-form-section" className="px-4 sm:px-8 lg:px-12 py-6 bg-[#FAF6F1]">
                 <div className="bg-[#311E1A] rounded-[40px] p-6 sm:p-10 lg:p-12 text-white relative overflow-hidden shadow-lg">
                   {/* Dried wheat stalks illustration on right */}
-                  <div className="absolute -right-6 -bottom-6 opacity-75 sm:opacity-90 pointer-events-none">
+                  <div className="absolute right-0 bottom-0 opacity-60 pointer-events-none">
                     <img
                       src="/images/wheat-stalks-line-art.png"
                       alt=""
