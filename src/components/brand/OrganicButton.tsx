@@ -62,7 +62,7 @@ export function OrganicButton({
           className="transition-colors duration-200 group-hover:fill-[#FFE924]"
         />
       </svg>
-      <span className="relative z-10 flex items-center gap-2">
+      <span className="relative z-10 flex items-center justify-center gap-2">
         {showDot && (
           <span className="inline-block h-2 w-2 rounded-full bg-white shadow-sm" />
         )}

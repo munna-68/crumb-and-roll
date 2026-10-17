@@ -73,13 +73,14 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3 sm:gap-4">
-          <OrganicButton
-            size="sm"
-            onClick={() => scrollToSection(SECTION_IDS.products)}
-            className="hidden sm:inline-flex"
-          >
-            {HERO_VARIANT === 'art' ? 'SHOP ONLINE' : 'START BAKING'}
-          </OrganicButton>
+          <div className="hidden sm:block">
+            <OrganicButton
+              size="sm"
+              onClick={() => scrollToSection(SECTION_IDS.products)}
+            >
+              {HERO_VARIANT === 'art' ? 'SHOP ONLINE' : 'START BAKING'}
+            </OrganicButton>
+          </div>
 
           <CartButton />
 
@@ -87,9 +88,9 @@ export function Header() {
             type="button"
             onClick={() => openOverlay('menu')}
             aria-label="Open menu"
-            className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-espresso shadow-sm transition-transform hover:scale-105 active:scale-95 lg:hidden"
+            className="flex h-10 w-10 cursor-pointer items-center justify-center text-espresso transition-transform hover:scale-105 active:scale-95 lg:hidden"
           >
-            <Menu className="h-5 w-5" aria-hidden="true" />
+            <Menu className="h-6 w-6 stroke-[2.2]" aria-hidden="true" />
           </button>
         </div>
       </div>

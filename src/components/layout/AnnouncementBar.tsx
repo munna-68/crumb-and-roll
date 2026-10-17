@@ -41,7 +41,7 @@ function SubscribeNote() {
 /** Purple promo bar with an infinite marquee (static under reduced motion). */
 export function AnnouncementBar() {
   return (
-    <div className="bg-grape text-white">
+    <div className="hidden sm:block bg-grape text-white">
       <Marquee label="Promotions" duration={34} className="py-2">
         <PromoNote />
         <SubscribeNote />
