@@ -267,7 +267,7 @@ export function HeroBakeCookies() {
 
               {/* Mobile Actions: ORDER NOW Button & COOKING BLOG Link */}
               <div className="mt-6 flex flex-col items-center">
-                <div className="relative w-full max-w-[380px]">
+                <div className="relative w-full">
                   <m.button
                     type="button"
                     onClick={orderScratchLoaf}
@@ -353,7 +353,7 @@ export function HeroBakeCookies() {
                 </div>
 
                 {/* Wooden cutting-board strip */}
-                <div className="relative z-30 flex h-9 items-center justify-between border-t border-[#8C5A32]/30 bg-gradient-to-r from-[#BA8156] via-[#C99266] to-[#A86F43] px-5 text-[10px] font-bold text-espresso/85 rounded-b-[30px]">
+                <div className="relative z-30 flex h-9 items-center justify-between border-t border-[#8C5A32]/30 bg-[#B98A62] px-5 text-[10px] font-bold text-espresso/85 rounded-b-[30px]">
                   <span>STONE-MILLED WHOLE WHEAT</span>
                   <span>BAKED FRESH EVERY MORNING</span>
                 </div>
