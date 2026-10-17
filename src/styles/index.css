@@ -73,6 +73,36 @@
     scroll-padding-top: 6.5rem;
   }
 
+  /* ---------------------------------------------------------------------
+     Optical scale-up: on desktop the whole layout (type, spacing, artwork)
+     reads one size larger, mirroring a ~106–120% browser zoom on bigger
+     displays. `zoom` scales px values uniformly, which a root font-size
+     bump cannot do. Progressive so wider screens get proportionally more.
+     --------------------------------------------------------------------- */
+  @media (min-width: 1280px) {
+    html {
+      zoom: 1.06;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    html {
+      zoom: 1.1;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    html {
+      zoom: 1.15;
+    }
+  }
+
+  @media (min-width: 2560px) {
+    html {
+      zoom: 1.2;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
