@@ -3,7 +3,8 @@ export interface FeaturedItem {
   name: string;
   note: string;
   price: number;
-  photoId: string;
+  /** base name of the optimized image in /public/images/bakes */
+  image: string;
   imageAlt: string;
   desc: string;
 }
@@ -14,8 +15,8 @@ export const FEATURED_ITEMS: readonly FeaturedItem[] = [
     name: 'Bagel Buns',
     note: 'Gluten free',
     price: 16,
-    photoId: '1555507036-ab1f4038808a',
-    imageAlt: 'Bagel buns on a ceramic paddle board',
+    image: 'bagel-buns',
+    imageAlt: 'Bagel buns on a cream ceramic paddle board',
     desc: 'All cookies should have a show-stopping German chocolate cake in their repertoire and this is one of our favourites.',
   },
   {
@@ -23,8 +24,8 @@ export const FEATURED_ITEMS: readonly FeaturedItem[] = [
     name: 'Wheat Cookies',
     note: 'Organic Oat',
     price: 16,
-    photoId: '1499636136210-6f4ee915583e',
-    imageAlt: 'Hand-tied stack of whole-wheat chocolate chunk cookies',
+    image: 'cookie-round',
+    imageAlt: 'Thick chocolate chunk cookies with sea salt flakes on a white plate',
     desc: 'Hand-tied stacks of real whole-wheat dark chocolate chunk cookies baked on stone hearths every morning.',
   },
 ] as const;

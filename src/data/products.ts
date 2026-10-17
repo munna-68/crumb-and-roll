@@ -8,8 +8,8 @@ export interface Product {
   /** card surface colour */
   cardBg: string;
   subtitle: string;
-  /** Unsplash photo id (query string built at render time) */
-  photoId: string;
+  /** base name of the optimized image in /public/images/bakes */
+  image: string;
   imageAlt: string;
   badge: string;
 }
@@ -22,8 +22,8 @@ export const DAILY_PRODUCTS: readonly Product[] = [
     price: 14,
     cardBg: 'bg-peach',
     subtitle: 'Toasted sesame & poppy seed NYC-style rings',
-    photoId: '1633171702522-5806cb457df1',
-    imageAlt: 'Pile of freshly baked sesame seed bagels in golden sunlight',
+    image: 'bagel-with-seeds',
+    imageAlt: 'Pile of freshly baked sesame and poppy seed bagels in golden light',
     badge: 'FRESH',
   },
   {
@@ -33,8 +33,8 @@ export const DAILY_PRODUCTS: readonly Product[] = [
     price: 18,
     cardBg: 'bg-sky-slice',
     subtitle: '72-hour fermented country walnut sourdough',
-    photoId: '1509440159596-0249088772ff',
-    imageAlt: 'Tall stack of artisanal sliced sourdough bread',
+    image: 'sliced-piece-bread',
+    imageAlt: '72-hour fermented walnut sourdough boule with a sliced half',
     badge: 'ARTISAN',
   },
   {
@@ -44,8 +44,8 @@ export const DAILY_PRODUCTS: readonly Product[] = [
     price: 16,
     cardBg: 'bg-lemon-soft',
     subtitle: 'Belgian dark chunk & browned butter sea salt',
-    photoId: '1499636136210-6f4ee915583e',
-    imageAlt: 'Chocolate chunk cookies with sea salt flakes',
+    image: 'cookies-glucose',
+    imageAlt: 'Belgian dark chocolate chunk cookies with a molten chocolate pull',
     badge: 'CRUNCHY',
   },
   {
@@ -55,8 +55,8 @@ export const DAILY_PRODUCTS: readonly Product[] = [
     price: 15,
     cardBg: 'bg-salmon',
     subtitle: 'Isigny Sainte-Mère cultured butter layers',
-    photoId: '1555507036-ab1f4038808a',
-    imageAlt: 'Golden flaky butter croissants fresh from the oven',
+    image: 'croissant',
+    imageAlt: 'Golden flaky butter croissants, one torn to show the honeycomb crumb',
     badge: 'TASTY',
   },
   {
@@ -66,8 +66,8 @@ export const DAILY_PRODUCTS: readonly Product[] = [
     price: 12,
     cardBg: 'bg-lavender',
     subtitle: 'Malted crust with coarse flaky sea salt',
-    photoId: '1573140247632-f8fd74997d5c',
-    imageAlt: 'Bavarian pretzels with coarse sea salt',
+    image: 'bretzel',
+    imageAlt: 'Bavarian pretzels with glossy dark crust and coarse sea salt',
     badge: 'WARM',
   },
   {
@@ -77,8 +77,8 @@ export const DAILY_PRODUCTS: readonly Product[] = [
     price: 22,
     cardBg: 'bg-teal-card',
     subtitle: 'Madagascar vanilla bean & golden crumb',
-    photoId: '1578985545062-69928b1d9587',
-    imageAlt: 'Plain butter cake with a golden crumb',
+    image: 'butter-cake',
+    imageAlt: 'Plain butter cake loaf with a thick slice cut to show the golden crumb',
     badge: 'SWEET',
   },
 ] as const;

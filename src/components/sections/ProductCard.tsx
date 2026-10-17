@@ -1,7 +1,7 @@
 import { m, useReducedMotion } from 'framer-motion';
 import { SketchedCookie } from '../brand/Doodles';
 import { useCart } from '../../context/cart';
-import { unsplash, unsplashSrcSet } from '../../lib/images';
+import { bake, bakeSrcSet } from '../../lib/images';
 import type { Product } from '../../data/products';
 
 interface ProductCardProps {
@@ -29,7 +29,7 @@ export function ProductCard({ product, index }: ProductCardProps) {
             id: product.id,
             name: product.title,
             price: product.price,
-            image: unsplash(product.photoId, 400, 80),
+            image: bake(product.image, 320),
           })
         }
         aria-label={`${product.title}: ${product.subtitle} +$${product.price}. Add ${product.title} to your bag.`}
@@ -58,11 +58,11 @@ export function ProductCard({ product, index }: ProductCardProps) {
 
         <span className="relative z-10 -mt-10 flex justify-center">
           <img
-            src={unsplash(product.photoId, 600, 84)}
-            srcSet={unsplashSrcSet(product.photoId, [320, 600], 84)}
+            src={bake(product.image, 600)}
+            srcSet={bakeSrcSet(product.image, [320, 600])}
             sizes="(min-width: 768px) 240px, 70vw"
             width={600}
-            height={520}
+            height={600}
             loading="lazy"
             decoding="async"
             alt=""

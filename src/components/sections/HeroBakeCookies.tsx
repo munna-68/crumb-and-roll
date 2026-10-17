@@ -5,7 +5,7 @@ import { StickerBadge } from '../brand/StickerBadge';
 import { SteamLines, CookieCrumbs, SketchedLoaf } from '../brand/Doodles';
 import { useCart } from '../../context/cart';
 import { useUI } from '../../context/ui';
-import { unsplash, unsplashSrcSet } from '../../lib/images';
+import { bake, bakeSrcSet } from '../../lib/images';
 import { SECTION_IDS } from '../../config/site';
 import { scrollToSection } from '../../lib/scroll';
 
@@ -40,7 +40,7 @@ export function HeroBakeCookies() {
       id: 'scratch-loaf',
       name: 'Scratch Baked Multigrain Loaf',
       price: 18,
-      image: unsplash('1509440159596-0249088772ff', 400),
+      image: bake('hero-bread-stack', 400),
     });
 
   return (
@@ -175,22 +175,22 @@ export function HeroBakeCookies() {
                 <div className="relative z-10 -mt-5 flex flex-col items-center justify-center gap-4 sm:-mt-16 sm:flex-row lg:-mt-24">
                   <div className="group relative w-full sm:w-auto">
                     <img
-                      src={unsplash('1509440159596-0249088772ff', 800, 85)}
-                      srcSet={unsplashSrcSet('1509440159596-0249088772ff', [480, 800, 1200], 85)}
+                      src={bake('hero-bread-stack', 800)}
+                      srcSet={bakeSrcSet('hero-bread-stack', [480, 800, 1200])}
                       sizes="(min-width: 640px) 320px, 100vw"
                       width={800}
-                      height={576}
-                      alt="Tall stack of artisanal sliced bread on a wooden board"
+                      height={800}
+                      alt="Tall stack of rustic multigrain loaves on a wooden board"
                       className="h-44 w-full rounded-2xl border-2 border-white object-cover shadow-md transition-transform duration-300 group-hover:scale-[1.02] sm:h-72 sm:w-80 sm:rounded-[28px] sm:border-4 sm:shadow-2xl"
                     />
                     {/* side half-loaf slice */}
                     <img
-                      src={unsplash('1586444248902-2f64eddc13df', 500, 85)}
-                      width={500}
-                      height={375}
+                      src={bake('sourdough-crumb', 400)}
+                      width={400}
+                      height={400}
                       loading="lazy"
                       decoding="async"
-                      alt="Artisan sourdough crumb slice"
+                      alt="Sourdough boule cut open showing an open, glossy crumb"
                       className="absolute -right-6 -bottom-2 hidden h-36 w-44 rotate-2 rounded-t-[70px] rounded-b-2xl border-4 border-lemon-soft object-cover shadow-xl sm:block"
                     />
                   </div>

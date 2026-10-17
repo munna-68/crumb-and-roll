@@ -3,7 +3,7 @@ import { StickerBadge } from '../brand/StickerBadge';
 import { SketchedCookie, SketchedLoaf, SketchedSwirlPastry, WavySquiggle } from '../brand/Doodles';
 import { Reveal } from '../motion/Reveal';
 import { useCart } from '../../context/cart';
-import { unsplash } from '../../lib/images';
+import { bake } from '../../lib/images';
 
 interface ThreeCardCollageProps {
   /** show the green mini-card + customer quote (full page) or the squiggle (art page) */
@@ -33,16 +33,16 @@ export function ThreeCardCollage({ showQuote = true }: ThreeCardCollageProps) {
           <div className="relative z-10 -mt-24 flex items-end justify-center">
             <div className="relative flex h-[320px] w-56 flex-col items-center justify-end sm:w-60">
               <img
-                src={unsplash('1558961363-fa8fdf82db35', 700, 85)}
-                width={700}
-                height={700}
+                src={bake('cookies-glucose', 600)}
+                width={600}
+                height={600}
                 loading="lazy"
                 decoding="async"
-                alt="Tall stack of artisanal chocolate chip cookies"
+                alt="Towering stack of chocolate chunk cookies with a molten pull"
                 className="h-72 w-52 rounded-[28px] border-4 border-sand object-cover shadow-xl transition-transform duration-300 group-hover:scale-105"
               />
               <img
-                src={unsplash('1499636136210-6f4ee915583e', 400, 85)}
+                src={bake('cookie-round', 400)}
                 width={400}
                 height={400}
                 loading="lazy"
@@ -63,7 +63,7 @@ export function ThreeCardCollage({ showQuote = true }: ThreeCardCollageProps) {
                   id: 'stack-cookies',
                   name: '8-Stack Choco Chip Cookies',
                   price: 14,
-                  image: unsplash('1558961363-fa8fdf82db35', 400, 80),
+                  image: bake('cookies-glucose', 320),
                 })
               }
               className="cursor-pointer font-extrabold underline transition-colors hover:text-tangerine"
@@ -88,7 +88,7 @@ export function ThreeCardCollage({ showQuote = true }: ThreeCardCollageProps) {
                   id: 'baked-loaf-tray',
                   name: 'Twin Ceramic Loaf Bake',
                   price: 19,
-                  image: unsplash('1509440159596-0249088772ff', 400, 80),
+                  image: bake('tray-loaves', 400),
                 })
               }
               aria-label="Add Twin Ceramic Loaf Bake to your bag"
@@ -101,12 +101,12 @@ export function ThreeCardCollage({ showQuote = true }: ThreeCardCollageProps) {
                 🍃
               </span>
               <img
-                src={unsplash('1509440159596-0249088772ff', 400, 80)}
+                src={bake('tray-loaves', 400)}
                 width={400}
-                height={280}
+                height={299}
                 loading="lazy"
                 decoding="async"
-                alt="Baked ceramic trays with fresh loaves"
+                alt="Rustic round loaves baked in ceramic trays"
                 className="h-full w-full rounded-[18px] object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </m.button>

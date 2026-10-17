@@ -6,7 +6,7 @@ import { Parallax } from '../motion/Parallax';
 import { useCart } from '../../context/cart';
 import { FEATURED_ITEMS } from '../../data/featured';
 import { HERO_VARIANT, SECTION_IDS } from '../../config/site';
-import { unsplash } from '../../lib/images';
+import { bake, bakeSrcSet } from '../../lib/images';
 
 /**
  * "YOUR ONLY DOSE OF DELIGHT" — sky-blue baguette card with the rotating
@@ -34,8 +34,8 @@ export function FeaturedDelight() {
             <div className="group relative flex min-h-[300px] flex-col justify-end rounded-[34px] bg-sky-card p-6 pb-0 shadow-sm">
               <Parallax strength={10} className="relative z-10 -mt-20 flex justify-center">
                 <img
-                  src={unsplash('1549931319-a545dcf3bc73', 800, 85)}
-                  srcSet={`${unsplash('1549931319-a545dcf3bc73', 480, 85)} 480w, ${unsplash('1549931319-a545dcf3bc73', 800, 85)} 800w`}
+                  src={bake('baguettes-basket', 800)}
+                  srcSet={bakeSrcSet('baguettes-basket', [480, 800])}
                   sizes="(min-width: 640px) 320px, 80vw"
                   width={800}
                   height={800}
@@ -60,9 +60,9 @@ export function FeaturedDelight() {
                 YOUR {HERO_VARIANT === 'hand' ? 'DAILY' : 'ONLY'}{' '}
                 <span className="relative mx-1 inline-block align-middle">
                   <img
-                    src={unsplash('1499636136210-6f4ee915583e', 160, 80)}
-                    width={160}
-                    height={160}
+                    src={bake('cookie-round', 400)}
+                    width={400}
+                    height={400}
                     loading="lazy"
                     decoding="async"
                     alt=""
@@ -108,7 +108,7 @@ export function FeaturedDelight() {
                       id: featured.id,
                       name: featured.name,
                       price: HERO_VARIANT === 'hand' ? 13 : featured.price,
-                      image: unsplash(featured.photoId, 400, 80),
+                      image: bake(featured.image, 400),
                     })
                   }
                   aria-label={`Add ${featured.name} to your bag`}
@@ -116,7 +116,7 @@ export function FeaturedDelight() {
                 >
                   <span className="flex h-16 w-24 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-mist shadow-inner">
                     <img
-                      src={unsplash(featured.photoId, 400, 80)}
+                      src={bake(featured.image, 400)}
                       width={400}
                       height={400}
                       loading="lazy"
